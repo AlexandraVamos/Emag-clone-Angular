@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+
+<defs>
+</defs>
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+	<circle cx="35.811" cy="35.811" r="34.811" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(206,226,242); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+	<path d="M 89.707 88.293 L 61.822 60.408 c 13.26 -14.013 13.037 -36.194 -0.689 -49.919 c -13.962 -13.962 -36.681 -13.961 -50.644 0 c -13.962 13.962 -13.962 36.681 0 50.644 c 6.981 6.981 16.152 10.472 25.322 10.472 c 8.859 0 17.712 -3.267 24.597 -9.783 l 27.885 27.885 C 88.488 89.902 88.744 90 89 90 s 0.512 -0.098 0.707 -0.293 C 90.098 89.316 90.098 88.684 89.707 88.293 z M 11.903 59.719 c -13.182 -13.183 -13.182 -34.633 0 -47.816 c 6.591 -6.591 15.25 -9.887 23.908 -9.887 c 8.659 0 17.316 3.295 23.908 9.887 c 13.183 13.183 13.183 34.633 0 47.816 C 46.535 72.899 25.087 72.903 11.903 59.719 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(50,71,92); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+	<circle cx="19.296" cy="19.296" r="6.486" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(227,238,247); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+	<circle cx="30.593" cy="30.593" r="3.643" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(227,238,247); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+</g>
+</svg>

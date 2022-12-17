@@ -1,0 +1,20 @@
+<div *ngIf="productItem" class="product-card">
+    <div class="card-image" (click)="redirectToProductDetail(productItem.id)">
+
+        <img src="{{productItem.image}}" />
+
+    </div>
+    <div class="product-card-details">
+        <h3>{{productItem.title}}</h3>
+        <p class="brand"> Brand Name
+            <span>{{productItem.rating.rate}}
+                <fa-icon [icon]="['fas', 'star']" [styles]="{'color': 'gray'}"></fa-icon>
+            </span>
+        </p>
+        <div class="price-section">
+            <p class="price">{{productItem.price}}$</p>
+            <p class="actual-price">${{(productItem.price+30/100*productItem.price).toFixed(2)}}</p>
+            <p class="discount">(30% Off)</p>
+        </div>
+    </div>
+</div>

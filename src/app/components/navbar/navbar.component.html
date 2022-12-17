@@ -1,0 +1,135 @@
+<div class="header">
+    <nav class="header_top">
+        <div class="header_menu">
+            <a routerLink="/products"> <img src="assets/images/logo.svg" class="header_menu_logo" alt=""></a>
+            <div class="header_menu_searchbar">
+                <div class="input_and_suggestions">
+                    <input type="text" class="header_menu_input" placeholder="Incepe o cautare noua"
+                        id="searchBoxDesktop" (keyup)="searchFeatureDesktop()">
+                    <div>
+                        <div class="drop" *ngFor="let item of searchListDesktop"><img src="{{item.image}}"
+                                routerLink="/products/{{item.id}}" (click)="singleProductRefreshPage(item.id)"><a
+                                routerLink="/products/{{item.id}}"
+                                (click)="singleProductRefreshPage(item.id)">{{item.title}}</a></div>
+                        <div class="allProdBtn" *ngIf="isMenuOpenedDesktop"
+                            routerLink="/products/search/{{searchTextDesktop}}"
+                            (click)="productListRefreshPage(searchTextDesktop)">Show all
+                            products with
+                            '{{searchTextDesktop}}'
+                        </div>
+                    </div>
+                </div>
+                <div class="header_menu_searchbar_icon">
+                    <img src="assets/images/search.png" alt="">
+                </div>
+            </div>
+            <div class="input_and_suggestions-mobile">
+                <div *ngIf="showSearchOnMobile">
+                    <input type="text" class="header_menu_input-mobile" placeholder="Incepe o noua cautare..."
+                        id="searchBoxMobile" (keyup)="searchFeatureMobile()">
+                    <div>
+                        <div class="drop-mobile" *ngFor="let item of searchListMobile"><img src="{{item.image}}"
+                                routerLink="/products/{{item.id}}" (click)="singleProductRefreshPage(item.id)"><a
+                                routerLink="/products/{{item.id}}"
+                                (click)="singleProductRefreshPage(item.id)">{{item.title}}</a></div>
+                        <div class="allProdBtn-mobile" *ngIf="isMenuOpenedMobile"
+                            routerLink="/products/search/{{searchTextMobile}}"
+                            (click)="productListRefreshPage(searchTextMobile)">Show all products with
+                            '{{searchTextMobile}}'
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_menu_searchbar-mobile">
+                <button (click)="onMobileSearch()"><img src="assets/images/search.png" alt=""></button>
+            </div>
+            <div class="header_menu_signin">
+                <span class="header_menu_top_item" id="account" routerLink="/account-page">Account
+                    <span class="right-menu">
+                        <button class="menu-button">
+                            <img src="assets/images/down-arrow.svg" class="down-arrow"></button>
+                        <div class="dropdown-menu">
+                            <strong class="user-name">Hello, {{userName}}</strong>
+                            <hr>
+                            <a routerLink="/account-page">Order History</a>
+                            <a routerLink="/account-page">Acount details</a>
+                            <hr>
+                            <a href="" (click)="logOut()">Log out</a>
+                        </div>
+
+                    </span>
+                </span>
+            </div>
+            <div class="cart-block">
+                <img src="assets/images/cart.svg" routerLink="/cart" class="cart-icon">
+                <p class="header_cart_number">{{cartService.getCartLength(this.userId)}}</p>
+            </div>
+            <div class="header_menu_signin">
+                <span class="header_menu_top_item">My Cart
+                    <span class="right-menu">
+                        <button class="menu-button"><img src="assets/images/down-arrow.svg" class="down-arrow"></button>
+                        <div class="dropdown-menu-cart">
+                            <strong class="latest-products">LATEST PRODUCTS</strong>
+                            <hr>
+                            <div class="cart-prod" *ngFor="let item of cartProducts" routerLink="/products/{{item.id}}"
+                                (click)="singleProductRefreshPage(item.id)">
+                                <div class="cart-prod-img">
+                                    <img src={{item.image}} class="cart-prod-image">
+                                </div>
+                                <div class="cart-prod-desc">
+                                    <p class="cart-prod-desc-name">{{item.title}}</p>
+
+                                </div>
+                                <div class="cart-prod-price">
+                                    <p class="actual-price">${{(item.price+30/100*item.price).toFixed(2)}}</p>
+
+                                    <p class="new-price">${{item.price}}</p>
+                                    <p class="discount">(30% Off)</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <p class="total-products"><strong>Total</strong> {{cartService.getCartLength(this.userId)}}
+                                products<span class="total-price">${{cartService.getCartPrice(this.userId).toFixed(2)}}
+                                </span></p>
+                            <hr>
+                            <div class="cart-btn" routerLink="/cart">
+                                <button class="go-to-cart-btn1">&#187;</button>
+                                <button class="go-to-cart-btn2">Go to cart</button>
+                            </div>
+                        </div>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="navbar-aux-wrapper">
+    <div class="products-btn-wrapper">
+        <button class="products-btn" (click)="toggleButton()"> Products </button>
+        <div class="items-container">
+            <div *ngIf="isMouseOver" class="category-list-wrapper">
+                <div class="item-list" *ngFor="let category of categories">
+                    <div (mouseenter)="filterCategory($event)" (mouseleave)="hideCategories()">
+                        {{category}}
+                    </div>
+                </div>
+            </div>
+            <ul *ngIf="categoryName" class="item-list-extended">
+                <li *ngFor="let categoryProduct of categoryProducts">
+                    <a routerLink="/products/{{categoryProduct.id}}">
+                        <div class="category-product-img">
+                            <img src="{{categoryProduct.image}}" alt="" class="category-product-img-inside">
+                        </div>
+                        <div class="category-title">
+                            <p class="category-list-title">{{categoryProduct.title}}</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="account-wrapper">
+        <button class="account" routerLink="/account-page">Account</button>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<app-navbar [cartProducts]="cartProducts"></app-navbar>
+<div class="single-product-detail">
+    <h1>{{product.title}}</h1>
+    <h3>Cod Produs 38728190878679</h3>
+    <hr>
+    <div class="product-page">
+
+        <div class="product-images">
+            <div class="track">
+
+                <img src={{image}} alt="" class="top-image">
+            </div>
+            <div class="slides">
+                <div class="images-slide" *ngFor="let item of images let i = index">
+                    <img src={{item}} alt="" (click)="changeImage(i)">
+                </div>
+            </div>
+        </div>
+        <div class="product-description">
+            <h4 class="brand-name">{{product.title}}</h4>
+            <p class="product-category">Category: {{product.category}}</p>
+            <p class="sold-by">Sold by: EMAG</p>
+            <p class="product-desc">{{product.description}}</p>
+        </div>
+
+        <div class="add-to-cart-section">
+            <div class="price-section">
+                <p class="actual-price">${{(product.price+30/100*product.price).toFixed(2)}}</p>
+                <p class="discount">(30% Off)</p>
+                <p class="price-now">${{product.price}}</p>
+            </div>
+
+            <p class="stock">Stock:</p>
+            <p class="rating">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                {{product.rating.rate}}
+            </p>
+
+            <div class="cart-btn">
+                <button class="go-to-cart-btn1"><img src="assets/images/cart2.png" class="cart-icon" alt=""></button>
+                <button class="go-to-cart-btn2" (click)="addToCart(product, product.title)" id="cart-btn">{{!isInCart?
+                    "Add to cart":"Remove"}}</button>
+            </div>
+
+            <div class="favorites">
+                <div class="favorites-cart-btn">
+                    <button class="favorites-btn1"><img src="assets/images/heart.png" class="heart" alt=""></button>
+                    <button class="favorites-btn2"> Add to Favorites</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Similar Products</h2>
+
+    <div class="similar-section">
+        <div class="container" *ngFor="let product of productsFromSameCategory">
+            <div class="similar-product-img" routerLink="/products/{{product.id}}" (click)="refreshPage(product.id)">
+                <img src="{{product.image}}" alt="" class="similar-img">
+            </div>
+
+            <div class="similar-description">
+                <p class="similar-title">{{product.title}}</p>
+                <p class="similar-brand">Brand Name <span class="fa fa-star"> {{product.rating.rate}}</span></p>
+                <div class="similar-price-section">
+                    <p class="similar-price-now">${{product.price}}</p>
+                    <p class="similar-actual-price">${{(product.price+30/100*product.price).toFixed(2)}}</p>
+                    <p class="similar-discount">(30% Off)</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

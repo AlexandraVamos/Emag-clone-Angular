@@ -1,0 +1,14 @@
+<nav class="navbar-aux-wrapper">
+        <div class="products-btn-wrapper">
+            <button class="products-btn" (click)="toggleButton()">Porducts</button>
+            <div *ngIf="isMouseOver" class="category-list-wrapper">
+                <div class="item-list" *ngFor="let category of categories">
+                    <div (click)="filterProducts()">{{category}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="account">
+            <a href="account"> Account </a>
+        </div>
+</nav>

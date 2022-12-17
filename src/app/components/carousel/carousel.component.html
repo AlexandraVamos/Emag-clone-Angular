@@ -1,0 +1,21 @@
+<div *ngIf="images && images.length > 0" class="carousel-container" (mouseenter)="mouseEnter()"
+    (mouseleave)="mouseLeave()" (mouseenter)="showArrow()" (mouseleave)="hideArrow()">
+    <img *ngFor="let image of images; let i=index" [src]="image.imageSrc" [alt]="image.imageAlt"
+        [ngClass]="{'image-active': selectedIndex === i}" class="fade">
+
+    <div *ngIf="indicators" class="carousel-dot-container">
+        <span *ngFor="let dot of images; let i=index" class="dot" [ngClass]="{'active': selectedIndex === i}"
+            (click)="selectImage(i)">
+        </span>
+    </div>
+
+    <button *ngIf="controls" class="btn-carousel btn-prev" (click)="onPrevClick()">
+        <p class="left" *ngIf="show">&lt;</p>
+        <p class="left-mobile">&lt;</p>
+    </button>
+
+    <button *ngIf="controls" class="btn-carousel btn-next" (click)="onNextClick()">
+        <p class="right" *ngIf="show">&gt;</p>
+        <p class="right-mobile">&gt;</p>
+    </button>
+</div>

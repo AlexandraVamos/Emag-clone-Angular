@@ -1,0 +1,13 @@
+<label class="sort">
+    <select id="sort-by" [ngModel]="selectedValue" (ngModelChange)="printVal($event)">
+        <option *ngFor="let filter of filters" [value]="filter">
+            {{filter}}
+        </option>
+    </select>
+</label>
+
+<div class="row">
+    <div *ngFor="let product of products">
+        <app-products-item [productItem]="product" class="card"></app-products-item>
+    </div>
+</div>

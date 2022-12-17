@@ -1,0 +1,41 @@
+<app-navbar [cartProducts]="cartProducts"></app-navbar>
+<h1>My cart</h1>
+<div class="cart-page">
+    <div class="cart-page-container">
+        <div class=" cart-product" *ngFor="let item of cartProducts let i = index">
+            <div class="product-img">
+                <img src="{{item.image}}" alt="">
+            </div>
+            <div class="description">
+                <h2 class="product-name">{{item.title}}</h2>
+                <p class="price">${{item.price}} <span
+                        class="real-price">${{(item.price+30/100*item.price).toFixed(2)}}</span><span
+                        class="discount">(30% off)</span>
+                </p>
+                <div>
+                    <img src="assets/images/trash.svg" class="trash-icon" (click)="removeobject(item.id)">
+                    <span>
+                        <img src="assets/images/minus.svg" class="minus-icon" (click)="substractObject(item.id)">
+                        <input type="text" value="{{cart[i].quantity}}" id="quantity{{item.id}}"
+                            (keyup.enter)="addManually(item.id)">
+                        <img src="assets/images/plus.svg" class="plus-icon" (click)="addObject(item.id)">
+                    </span>
+                </div>
+            </div>
+
+
+        </div>
+        <div>
+            <hr>
+            <p class="total">Total: {{cartProductsNumber}}<span class="total-price">$ {{totalPrice>=0 ?
+                    totalPrice.toFixed(2): "0.00"}}</span>
+            </p>
+            <div class="cart-btn" routerLink="/products">
+                <button class="go-to-cart-btn1">&#187;</button>
+                <button class="go-to-cart-btn2">Go to payment</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

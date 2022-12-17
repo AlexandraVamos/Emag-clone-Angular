@@ -1,0 +1,58 @@
+a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Mukta';
+}
+.navbar-aux-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 1920px;
+    height: 61px;
+    left: 0px;
+    top: 72px;
+    background: linear-gradient(90deg, #FF1D25 2.6%, #A0328C 20.26%, #7040A4 40.63%, #4359C7 59.37%, #0082E6 82.29%);
+}
+
+.products-btn-wrapper {
+    position: relative;
+    left: 62px;
+    top: 6px;
+}
+
+.products-btn {
+    width: 196px;
+    height: 56px;
+    left: 50px;
+    top: 78px;
+    background: #FFFFFF;
+    border-radius: 10px 13px 0px 0px;
+    border: none;
+    font-family: 'Mukta';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.account {
+    display: inline;
+    position: relative;
+    left: 87px;
+    top: 25%;
+    font-family: 'Mukta';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 40px;
+    color: #fff;
+}
+
+.category-list-wrapper {
+    display: inline-block;
+    width: 293px;
+    height: 628px;
+    left: 50px;
+    top: 133px;
+    background: #fff;
+    box-shadow: 2px 7px 27px rgba(0, 0, 0, 0.08);
+}

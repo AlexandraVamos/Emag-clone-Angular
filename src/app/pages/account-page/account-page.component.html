@@ -1,0 +1,41 @@
+<app-navbar [cartProducts]="cartProducts"></app-navbar>
+<div class="container">
+    <div class="tab">
+        <ul>
+            <li id="account" [class.color]="id==='account'" (click)="tabChange('account')">My Account</li>
+            <li id="order" [class.color]="id==='order'" (click)="tabChange('order')">Order History</li>
+        </ul>
+        <div class="content">
+            <div class="content-value" *ngIf="id === 'account'">
+                <h2>Account Details</h2>
+                <div class="account-details">
+                    <div class="avatar">
+                        <img src="assets/images/avatar.png" alt="">
+                    </div>
+                    <div class="user-info">
+                        <p class="about-me">About me</p>
+                        <p class="first-name">First Name: {{user.name.firstname}}</p>
+                        <p class="last-name">Last Name: {{user.name.lastname}}</p>
+                        <p>Email: {{user.email}}</p>
+                        <p>Phone: {{user.phone}}</p>
+                    </div>
+                    <div class="adress">
+                        <p class="user-address">Address</p>
+                        <p class="city">City: {{user.address.city}}</p>
+                        <p>Street: {{user.address.street}}</p>
+                        <p>Number: {{user.address.number}}</p>
+                        <p>zipcode: {{user.address.zipcode}}</p>
+                        <p>Geolocation: lat: {{user.address.geolocation.lat}} long: {{user.address.geolocation.long}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-value" *ngIf="id === 'order'">
+                <h2>My Orders</h2>
+                <p class="orders">No orders yet...</p>
+                <!-- <a (click)="orderHistory()">Orders</a> -->
+                <img src="assets/images/empty-box.png" alt="" class="order-img">
+            </div>
+        </div>
+    </div>
+</div>

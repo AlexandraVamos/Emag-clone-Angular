@@ -1,0 +1,158 @@
+.carousel-container {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 6px 12px #dce1e1;
+}
+
+.carousel-container img {
+    display: none;
+    margin-top: 0;
+
+}
+
+.carousel-container img.image-active {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-dot-container {
+    position: absolute;
+    right: 100px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 1rem;
+
+    @media(max-width: 600px) {
+        right: 0px;
+    }
+}
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: opacity 0.6s ease;
+    opacity: 0.5;
+
+
+    @media(max-width: 600px) {
+        height: 7px;
+        width: 7px;
+        margin: 0 5px;
+    }
+}
+
+.active,
+.dot:hover {
+    opacity: 1;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1, 5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0, 4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.btn-carousel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: white;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    cursor: pointer;
+}
+
+
+.left {
+    background-color: none;
+    color: #005fb8c0;
+    font-size: 25px;
+    font-weight: 900;
+
+    @media(max-width: 400px) {
+        display: none;
+    }
+}
+
+.left-mobile {
+    background-color: none;
+    color: #005fb8c0;
+    font-size: 15px;
+    font-weight: 700;
+
+    @media(min-width: 400px) {
+        display: none;
+    }
+}
+
+.right {
+    width: 100px;
+    color: #005fb8c0;
+    font-size: 25px;
+    font-weight: 900;
+
+    @media(max-width: 400px) {
+        display: none;
+    }
+}
+
+.right-mobile {
+    background-color: none;
+    color: #005fb8eb;
+    font-size: 15px;
+    font-weight: 700;
+
+    @media(min-width: 400px) {
+        display: none;
+    }
+}
+
+.btn-prev {
+    left: 0;
+    width: 30px;
+}
+
+.btn-next {
+    right: 0;
+    width: 30px;
+}
+
+.icon-carousel {
+    color: white;
+    opacity: 0.5;
+    transition: all 0.15s ease;
+}
+
+.icon-carousel:hover {
+    opacity: 0.9;
+}
+
+.icon-carousel:active {
+    opacity: 0.5;
+}
